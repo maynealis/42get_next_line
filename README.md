@@ -8,7 +8,7 @@
 - [What I learned](#What-I-learned)
 
 
-## Features:
+## 📋 Features:
 
 - Line-by-line Reading: Returns one line at a time from a file descriptor
 - Multiple File Support: Can read from up to 1024 different files simultaneously (bonus part)
@@ -58,17 +58,19 @@ flowchart TD
     M --> N[Clean up memory]
     N --> O[Return line]
     
-    subgraph Memory Management
+    end
+```
+
+
+
+subgraph Memory Management
     P[cleanup_memory function]
     P --> Q[Free static left]
     P --> R[Free buffer]
     P --> S[Free line_read]
     P --> T[Free line]
-    end
-```
-    
 
-## 🧠 What I Learned
+## 🚀 What I Learned
 
 1. Static Variables:
 	- Understanding persistence between function calls
@@ -96,27 +98,31 @@ flowchart TD
 	- Implementing bonus features without duplicating code
 
 
-## References
-
 ## Project structure
 
-Main Function: get_next_line
+Main Functions (get_next_line.c):
 
-Handles file reading and line extraction
-Manages static buffer for subsequent calls
-Returns complete lines or NULL on errors/EOF
-
-
-Utility Functions:
-
-ft_strlen: String length calculation
-ft_strdup: String duplication
-ft_substr: Substring extraction
-ft_strjoin: String concatenation
+- get_next_line: Main function
+- get_line: Handles buffer reading and line assembly
+- index_endline: Newline character detection
+- cleanup_memory: Manages memory cleanup
 
 
-Helper Functions:
+Utility Functions (get_next_line_utils.c):
 
-cleanup_memory: Memory management and cleanup
-index_endline: Newline character detection
-get_line: Buffer reading and line accumulation
+- ft_strlen: String length calculation
+- ft_strdup: String duplication
+- ft_substr: Substring extraction
+- ft_strjoin: String concatenation
+
+## References
+
+- [Video concept](https://youtu.be/-Mt2FdJjVno?si=E80d-zj48wAzHebH)
+- [Static variables](https://en.wikipedia.org/wiki/Static_variable)
+- [About maximum files that can be openend at the same time](https://stackoverflow.com/questions/17931583/maximum-number-of-files-that-can-be-opened-by-c-fopen-in-linux)
+
+**Interesting things I learned:**
+- [Use of valgrind for memory leaks](https://stackoverflow.com/questions/5134891/how-do-i-use-valgrind-to-find-memory-leaks)
+- [About memory in c](https://www.geeksforgeeks.org/memory-layout-of-c-program/)
+
+
