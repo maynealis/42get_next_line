@@ -35,7 +35,7 @@ Memory Handling:
 - Careful memory cleanup in case of errors.
 - Proper freeing of resources when no longer needed.
 
-
+```mermaid
 flowchart TD
     A[get_next_line called] --> B{Check fd and BUFFER_SIZE}
     B -->|Invalid| C[Return NULL]
@@ -65,7 +65,7 @@ flowchart TD
     P --> S[Free line_read]
     P --> T[Free line]
     end
-    
+```
     
 
 ## 🧠 What I Learned
