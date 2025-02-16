@@ -3,7 +3,7 @@
 `get_next_line` is a C function that reads text from a file descriptor line by line, without requiring the entire file to be loaded into memory. This project is part of the 42 School curriculum and focuses on static variables, memory management and file handling efficiently.
 
 **Table of contents**
-- [Features](#Feautres)
+- [Features](#-feautres)
 - [How it works](#How-it-works)
 - [What I learned](#What-I-learned)
 
@@ -57,18 +57,8 @@ flowchart TD
     L --> M[Store remaining in static left]
     M --> N[Clean up memory]
     N --> O[Return line]
-    
-    end
+
 ```
-
-
-
-subgraph Memory Management
-    P[cleanup_memory function]
-    P --> Q[Free static left]
-    P --> R[Free buffer]
-    P --> S[Free line_read]
-    P --> T[Free line]
 
 ## 🚀 What I Learned
 
