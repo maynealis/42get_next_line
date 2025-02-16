@@ -6,7 +6,7 @@
 - [Features](#-Features)
 - [How it works](#-How-it-works)
 - [What I learned](#-What-I-learned)
-- [Project structure]
+- [Project structure](#-Project-structure)
 - [References](#-References)
 
 
@@ -119,4 +119,4 @@ flowchart TD
 - [Use of valgrind for memory leaks](https://stackoverflow.com/questions/5134891/how-do-i-use-valgrind-to-find-memory-leaks)
 - [About memory in c](https://www.geeksforgeeks.org/memory-layout-of-c-program/)
 
-
+[Back to TOP](#Get-Next-Line)
