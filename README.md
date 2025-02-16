@@ -1,11 +1,14 @@
 # Get Next Line
 
-`get_next_line` is a C function that reads text from a file descriptor line by line, without requiring the entire file to be loaded into memory. This project is part of the 42 School curriculum and focuses on static variables, memory management and file handling efficiently.
+`get_next_line` is a function that reads text from a file descriptor line by line, without requiring the entire file to be loaded into memory. This project is part of the 42 School curriculum and focuses on static variables, memory management and file handling efficiently.
 
 **Table of contents**
-- [Features](#-feautres)
-- [How it works](#How-it-works)
-- [What I learned](#What-I-learned)
+- [Features](#-Features)
+- [How it works](#-How-it-works)
+- [What I learned](#-What-I-learned)
+- [Project structure]
+- [References](#-References)
+
 
 
 ## 📋 Features:
@@ -35,32 +38,8 @@ Memory Handling:
 - Careful memory cleanup in case of errors.
 - Proper freeing of resources when no longer needed.
 
-```mermaid
-flowchart TD
-    A[get_next_line called] --> B{Check fd and BUFFER_SIZE}
-    B -->|Invalid| C[Return NULL]
-    B -->|Valid| D[Allocate buffer]
-    D --> E[Call get_line]
-    
-    subgraph get_line process
-    E --> F{Check static left buffer}
-    F -->|Empty| G[Read from fd]
-    F -->|Has content| H[Use existing content]
-    G --> I[Add to temporary buffer]
-    H --> I
-    I --> J{Contains newline?}
-    J -->|No| G
-    J -->|Yes| K[Return complete line]
-    end
-    
-    K --> L[Extract line until \n]
-    L --> M[Store remaining in static left]
-    M --> N[Clean up memory]
-    N --> O[Return line]
 
-```
-
-## 🚀 What I Learned
+## 🚀 What I learned
 
 1. Static Variables:
 	- Understanding persistence between function calls
@@ -88,7 +67,7 @@ flowchart TD
 	- Implementing bonus features without duplicating code
 
 
-## Project structure
+## 🏛️ Project structure
 
 Main Functions (get_next_line.c):
 
@@ -105,7 +84,32 @@ Utility Functions (get_next_line_utils.c):
 - ft_substr: Substring extraction
 - ft_strjoin: String concatenation
 
-## References
+```mermaid
+flowchart TD
+    A[get_next_line called] --> B{Check fd and BUFFER_SIZE}
+    B -->|Invalid| C[Return NULL]
+    B -->|Valid| D[Allocate buffer]
+    D --> E[Call get_line]
+    
+    subgraph get_line process
+    E --> F{Check static left buffer}
+    F -->|Empty| G[Read from fd]
+    F -->|Has content| H[Use existing content]
+    G --> I[Add to temporary buffer]
+    H --> I
+    I --> J{Contains newline?}
+    J -->|No| G
+    J -->|Yes| K[Return complete line]
+    end
+    
+    K --> L[Extract line until \n]
+    L --> M[Store remaining in static left]
+    M --> N[Clean up memory]
+    N --> O[Return line]
+
+```
+
+## 🔗 References
 
 - [Video concept](https://youtu.be/-Mt2FdJjVno?si=E80d-zj48wAzHebH)
 - [Static variables](https://en.wikipedia.org/wiki/Static_variable)
