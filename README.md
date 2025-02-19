@@ -4,6 +4,7 @@
 
 **Table of contents**
 - [Features](#-Features)
+- [Usage](#-Usage)
 - [How it works](#-How-it-works)
 - [What I learned](#-What-I-learned)
 - [Project structure](#-Project-structure)
@@ -19,6 +20,18 @@
 - Configurable Buffer: Buffer size can be defined at compilation time
 - Error Handling: Robust error management for various edge cases
 - No Memory Leaks: Complete memory management with proper cleanup
+
+## 🛠 Usage
+Clone the repository and compile:
+```bash
+cc -Wall -Werror -Wextra get_next_line.c get_next_line_utils.c your_file.c
+```
+`your_file` is where you can add a main to use the `get_next_line(fd)` function.
+
+To specify a BUFFER_SIZE use the flag `-D BUFFER_SIZE=XX`.
+
+[!NOTE]
+Use the `_bonus` files if you want to read multiple files at the same time.
 
 ## 🔍 How it works
 
