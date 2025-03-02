@@ -22,16 +22,18 @@
 - No Memory Leaks: Complete memory management with proper cleanup
 
 ## 🛠 Usage
-Clone the repository and compile:
+Clone this repository and compile with:
 ```bash
 cc -Wall -Werror -Wextra get_next_line.c get_next_line_utils.c your_file.c
 ```
-`your_file` is where you can add a main to use the `get_next_line(fd)` function.
+- `your_file` is where you can add a main to use the `get_next_line(fd)` function.
+- Use the flag `-D BUFFER_SIZE=XX` to define the buffer size (XX is the desired value).
+- Use the `_bonus` files if you want to read multiple files at the same time.
 
-To specify a BUFFER_SIZE use the flag `-D BUFFER_SIZE=XX`.
+> [!IMPORTANT] 
+> Include the `get_next_line.h` header file in your source file.
 
-[!NOTE]
-Use the `_bonus` files if you want to read multiple files at the same time.
+
 
 ## 🔍 How it works
 
