@@ -6,7 +6,7 @@
 /*   By: cmayne-p <cmayne-p@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 17:36:23 by cmayne-p          #+#    #+#             */
-/*   Updated: 2025/01/05 17:36:26 by cmayne-p         ###   ########.fr       */
+/*   Updated: 2025/03/08 15:24:36 by cmayne-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
  * get_next_line function to handle common string manipulations.
  */
 
-size_t	ft_strlen(char *s)
+size_t	gnl_strlen(char *s)
 {
 	size_t	i;
 
@@ -29,7 +29,7 @@ size_t	ft_strlen(char *s)
 	return (i);
 }
 
-char	*ft_strdup(char *s)
+char	*gnl_strdup(char *s)
 {
 	char	*dup;
 	size_t	size;
@@ -50,7 +50,7 @@ char	*ft_strdup(char *s)
 	return (dup);
 }
 
-char	*ft_substr(char *s, size_t ini, size_t end)
+char	*gnl_substr(char *s, size_t ini, size_t end)
 {
 	char	*sub;
 	size_t	size;
@@ -76,7 +76,7 @@ char	*ft_substr(char *s, size_t ini, size_t end)
 	return (sub);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*gnl_strjoin(char *s1, char *s2)
 {
 	char	*str;
 	size_t	s1_size;
