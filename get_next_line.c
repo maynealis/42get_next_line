@@ -6,7 +6,7 @@
 /*   By: cmayne-p <cmayne-p@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 17:25:46 by cmayne-p          #+#    #+#             */
-/*   Updated: 2025/01/10 13:40:56 by cmayne-p         ###   ########.fr       */
+/*   Updated: 2025/03/08 15:33:05 by cmayne-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ size_t	index_endline(char *s)
 	size_t	i;
 	size_t	size;
 
-	size = ft_strlen(s);
+	size = gnl_strlen(s);
 	i = 0;
 	while (i < size)
 	{
@@ -51,8 +51,8 @@ char	*get_line(int fd, char *buffer, char *left)
 	char	*line;
 	int		bytes_read;
 
-	temp = ft_strdup(left);
-	while ((temp != NULL && index_endline(temp) == ft_strlen(temp)) || !temp)
+	temp = gnl_strdup(left);
+	while ((temp != NULL && index_endline(temp) == gnl_strlen(temp)) || !temp)
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
 		if (bytes_read < 0)
@@ -63,9 +63,9 @@ char	*get_line(int fd, char *buffer, char *left)
 		if (bytes_read == 0)
 			break ;
 		buffer[bytes_read] = '\0';
-		line = ft_strjoin(temp, buffer);
+		line = gnl_strjoin(temp, buffer);
 		free(temp);
-		temp = ft_strdup(line);
+		temp = gnl_strdup(line);
 		free(line);
 	}
 	if (!temp)
@@ -90,11 +90,11 @@ char	*get_next_line(int fd)
 	if (line_read == NULL)
 		return (cleanup_memory(&left, buffer, NULL, NULL));
 	end_line = index_endline(line_read);
-	line = ft_substr(line_read, 0, end_line);
+	line = gnl_substr(line_read, 0, end_line);
 	if (line == NULL)
 		return (cleanup_memory(&left, buffer, line_read, NULL));
 	free(left);
-	left = ft_substr(line_read, end_line + 1, ft_strlen(line_read));
+	left = gnl_substr(line_read, end_line + 1, gnl_strlen(line_read));
 	free(line_read);
 	free(buffer);
 	return (line);

@@ -6,7 +6,7 @@
 /*   By: cmayne-p <cmayne-p@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 17:36:23 by cmayne-p          #+#    #+#             */
-/*   Updated: 2025/03/08 15:24:36 by cmayne-p         ###   ########.fr       */
+/*   Updated: 2025/03/08 15:34:23 by cmayne-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*gnl_strdup(char *s)
 
 	if (s == NULL)
 		return (NULL);
-	size = ft_strlen(s);
+	size = gnl_strlen(s);
 	dup = (char *)malloc(size * sizeof(char) + 1);
 	if (dup == NULL)
 		return (NULL);
@@ -58,7 +58,7 @@ char	*gnl_substr(char *s, size_t ini, size_t end)
 
 	if (s == NULL)
 		return (NULL);
-	size = ft_strlen(s);
+	size = gnl_strlen(s);
 	if (ini >= size)
 		return (NULL);
 	if (end >= size)
@@ -86,11 +86,11 @@ char	*gnl_strjoin(char *s1, char *s2)
 	if (s1 == NULL && s2 == NULL)
 		return (NULL);
 	if (s1 == NULL)
-		return (ft_strdup(s2));
+		return (gnl_strdup(s2));
 	if (s2 == NULL)
-		return (ft_strdup(s1));
-	s1_size = ft_strlen(s1);
-	s2_size = ft_strlen(s2);
+		return (gnl_strdup(s1));
+	s1_size = gnl_strlen(s1);
+	s2_size = gnl_strlen(s2);
 	str = (char *)malloc((s1_size + s2_size + 1) * sizeof(char));
 	if (str == NULL)
 		return (NULL);
